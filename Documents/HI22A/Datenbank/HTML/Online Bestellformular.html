@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bestellformular</title>
+<style>
+  select, input[type="checkbox"], input[type="radio"], input[type="submit"] {
+    width: 130px;
+  }
+  fieldset {
+    width: 300px;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<form action="/submit-order" method="post">
+  <fieldset>
+    <legend>Men&uuml;bestellung</legend>
+
+    <label for="appetizer">Vorspeise:</label><br>
+    <select id="appetizer" name="appetizer">
+      <option value="soup">Tagessuppe</option>
+      <option value="salad">Salat</option>
+    </select><br>
+
+    <label for="main-course">Hauptgericht:</label><br>
+    <select id="main-course" name="main_course">
+      <option value="steak">Rindersteak</option>
+      <option value="plaice">Scholle</option>
+      <option value="vegetable-lasagna">Gem&uuml;selasagne</option>
+    </select><br>
+
+    <label>Beilage:</label><br>
+    <input type="checkbox" id="potatoes" name="side_dish_potatoes"><br>
+    <label for="potatoes">Kartoffeln</label><br>
+
+
+</body>
+</html>

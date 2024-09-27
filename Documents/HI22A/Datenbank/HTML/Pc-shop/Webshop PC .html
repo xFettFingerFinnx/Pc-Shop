@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC-Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product {
+            background-color: #fff;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            max-width: 100%;
+            max-height: 200px;
+            object-fit: contain; 
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            transform: scale(1.05);
+        }
+
+        .product h2 {
+            min-height: 50px;
+            margin: 0 0 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .product p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+
+        .product .price {
+            color: #b12704;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #333;
+            color: #fff;
+            margin-top: 3rem;
+            border-top: 4px solid #ddd;
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+        }
+
+        /* Initially hide one of the sections */
+        #hardware-section {
+            display: none;
+        }
+
+        /* Navigation buttons */
+        .nav-buttons {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .nav-buttons button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            margin: 0 1rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #555;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Willkommen im PC-Shop</h1>
+    </div>
+
+    <div class="nav-buttons">
+        <button onclick="showPCs()">PCs Anzeigen</button>
+        <button onclick="showHardware()">Hardware Anzeigen</button>
+    </div>
+
+    <div class="container" id="pc-section">
+        <div class="product-grid">
+            <!-- PC Products -->
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\img_0065_1_7.jpg" alt="PC-Gehäuse 2">
+                <h2>Gaming PC Core i5-14600KF - RTX 4070 Super</h2>
+                <p>Intel Core-i5-1400KF, RTX 4070S, 32 GB RAM, 1TB SSD</p>
+                <p class="price">1.899,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\nero_rev2_main-min.jpg" alt="PC-Gehäuse 3">
+                <h2>Gaming PC Intel i9 14900KF Raptor</h2>
+                <p>Intel Core i9-14900KF, RTX 4070 Ti Super, 32 GB RAM, 2TB SSD</p>
+                <p class="price">2.749,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\lian-li-pc-o11d-razer-edition.jpg">
+                <h2>Gaming PC Wassergekühlt Intel Core i9 RTX 4080 </h2>
+                <p>Intel Core i9 Intel Core i9-13900KF, Zotac GeForce RTX 4080, 64 GB RAM, 2TB SSD, 2x ST8000VN004-2m2101 8TB, be quiet! BN309 Straight Power 11 Platinum 1000W, NZXT Kraken 360 RGB  
+             </p>
+                <p class="price">3.449,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\520e8ed4-a58d-56c5-8843-08c8a870a153.jpg" alt="PC-Gehäuse 1">
+                <h2>Gaming PC Intel Core i9 RTX 4070 SUPER </h2>
+                <p>Intel Core i9 Intel Core i9-12900KF, RTX 4070 SUPER, 32 GB RAM, 2TB SSD</p>
+                <p class="price">1.849,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="hardware-section">
+        <div class="product-grid">
+            <!-- Hardware Products -->
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\81Df1O3ffBL.jpg" alt="Grafikkarte 1">
+                <h2>MSI GeForce RTX 3060 GAMING X 12G</h2>
+                <p>Starke Performance durch NVIDIA Ampere mit NVIDIA GeForce RTX 3060, 12GB GDDR6, Raytracing und DLSS Unterstützung</p>
+                <p class="price">588,39 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\515QBSEJj-S._AC_.jpg" alt="Grafikkarte 2">
+                <h2>Gigabyte GeForce RTX 3070 Ti Gaming OC 8GB</h2>
+                <p>Für High-End-Gaming und professionelle Anwendungen.</p>
+                <p class="price">1.006,94 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\pixelboxx-mss-69855917.jpg" alt="SSD" class="ssd-img">
+                <h2>SSD 1TB Samsung M.2 PCI-E NVMe Gen4 980 PRO Basic</h2>
+                <p>Schnelle und zuverlässige Speichereinheit mit 1TB Kapazität.</p>
+                <p class="price">99,00 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\s-l400.jpg" alt="Mainboard">
+                <h2>GIGABYTE X570 GAMING X, AM4, AMD Mainboard</h2>
+                <p>Optimiert für AMD-Prozessoren mit exzellenter Konnektivität.</p>
+                <p class="price">140,03 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">83,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+
+            <div class="product">
+                <img src="C:\Users\Finn\Documents\HI22A\Datenbank\HTML\Pc-shop\61sbn2kVh7L._AC_UF350,350_QL80_.jpg" alt="Netzteil">
+                <h2>be quiet! Pure Power 10 600W ATX PC Netzteil BN278</h2>
+                <p>Hochwertiges 650W Netzteil für zuverlässige Leistung.</p>
+                <p class="price">79,99 &euro;</p>
+                <a href="#" class="button">In den Warenkorb</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 PC-Shop. Alle Rechte vorbehalten.</p>
+        <p>Kontakt: Finn Reineke</p>
+        <p>Tel: <a href="tel:+4917643374660" style="color: grey;">+49 176 43374660</a></p>
+    </footer>
+    
+
+    <script>
+        // JavaScript function to toggle between PC and hardware sections
+        function showPCs() {
+            document.getElementById("pc-section").style.display = "block";
+            document.getElementById("hardware-section").style.display = "none";
+        }
+
+        function showHardware() {
+            document.getElementById("pc-section").style.display = "none";
+            document.getElementById("hardware-section").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
