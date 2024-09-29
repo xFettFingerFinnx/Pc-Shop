@@ -1,1 +1,1 @@
-# Pc-shopy
+# Pc-shop
